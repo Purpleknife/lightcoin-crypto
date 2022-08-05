@@ -1,5 +1,4 @@
 class Account {
-
   constructor(username) {
     this.username = username;
     // Have the account balance start at $0 since that makes more sense.
@@ -17,11 +16,9 @@ class Account {
   addTransaction(transaction) {
     this.transactions.push(transaction);
   }
-
 }
 
 class Transaction {
-
   constructor(amount, account) {
     this.amount  = amount;
     this.account = account;
@@ -40,7 +37,6 @@ class Transaction {
 }
 
 class Deposit extends Transaction {
-
   isAllowed() {
     return true;
   }
@@ -48,12 +44,9 @@ class Deposit extends Transaction {
   get value() {
     return this.amount;
   }
-
 }
 
 class Withdrawal extends Transaction {
-
-
   get value() {
     return -this.amount;
   }
@@ -61,8 +54,6 @@ class Withdrawal extends Transaction {
   isAllowed() {
     return ((this.amount.balance - this.amount) >= 0);
   }
-
-
 }
 
 const myAccount = new Account('PurpleKnife');
